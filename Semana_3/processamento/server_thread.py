@@ -87,5 +87,6 @@ while True:
                 if not conexoes:
                     s.close()
                     sys.exit()
+                print("Ainda existem conexões")
             elif cmd == 'historico': #Para pegar a lista de conexoes ativas
                 print(str(conexoes.values()))
