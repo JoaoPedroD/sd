@@ -2,14 +2,15 @@ import sys
 import socket
 import threading
 HOST = 'localhost'
-rodando=True
+# rodando=True
 
 def threadDeResposta():
     c = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     c.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     c.bind(('localhost', 10002))
     c.listen(1)
-    while(rodando):
+    while(True):
+        # rodando
         # print(f"rodando = {rodando}")
         new_connection, _ = c.accept()
         data = new_connection.recv(2*4096)
@@ -32,7 +33,7 @@ while True:
     # print(data)
     if data == "fim":
         # print("entrei no fim")
-        rodando=False
+        # rodando=False
         break
     else:
         s.sendall(bytes(data, 'utf-8'))
