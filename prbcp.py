@@ -133,7 +133,7 @@ class RBCP():
 
     def task(self,c):
         # print(f'TASK = {c}')
-        l=c[int(PORTAS[self.id])]
+        l=c[int(PORTAS[self.id%4])]
         for i in list(c.keys()):
             if int(i) != int(PORTAS[self.id-1]):
                 if l == c[int(i)]:
